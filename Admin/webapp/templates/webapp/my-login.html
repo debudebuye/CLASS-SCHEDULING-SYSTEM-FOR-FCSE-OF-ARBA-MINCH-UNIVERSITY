@@ -1,0 +1,57 @@
+{% extends 'webapp/base1.html' %}
+
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+    <body style="background-color:rgb(238, 232, 232) ;background-image: url(logo.jpg);background-repeat: no-repeat;">
+
+      
+
+        <!-- <img src="logo.jpg" alt="" srcset="" style="width: 50%; height: 200px; color: rgba(193, 209, 244, 0.51); "> -->
+
+
+        <div class="container bg-light shadow-md p-5 form-layout" style="margin-top: 50px;margin-left: 40%;">
+
+            <h3> Login to your account </h3>
+
+            <hr>
+            <br>
+
+
+            <form method="POST" autocomplete="off">
+
+                {% csrf_token %}
+
+                {{form.username|as_crispy_field}}
+
+                <br>
+
+                {{form.password|as_crispy_field}}
+
+                <br>
+
+                <button type="submit" class="btn btn-primary w-100 btn-block p-2" style="background-color: rgb(14, 236, 14);border: 0;"> Login &nbsp; <i class="fa fa-key" aria-hidden="true"></i> </button>
+
+
+            </form>
+
+            <br>
+
+
+        </div>
+
+        <br>
+
+    </body>
+
+{% endblock %}
+
+
+
+
+
+
+
+
